@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Design tokens — CROSSBORDERS "warm / approachable" theme.
-   Same brand hues, softened: cream backgrounds, gentler blue, warmer coral,
-   warm charcoal text — for a friendlier, more human feel.
+   Design tokens — CROSSBORDERS "approachable blue-white" theme.
+   Built on the logo's own blue + red so the mark blends in, kept friendly with
+   airy blue-white backgrounds, soft tints, rounded type and generous rounding.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-ink: #4a423d;        /* warm charcoal — headings & body text */
-  --color-ink-soft: #8a817a;   /* warm gray — secondary text */
-  --color-navy: #4c6b8f;       /* softened brand blue */
-  --color-navy-dark: #3d5878;  /* deeper blue — hover / footer */
-  --color-red: #ef6f63;        /* warm coral accent */
-  --color-red-dark: #e2594d;   /* accent hover */
-  --color-mist: #f4ede1;       /* warm beige section background */
-  --color-cloud: #efe5d5;      /* warm card / hover background */
-  --color-line: #e8ddcb;       /* warm hairline borders */
-  --color-blush: #fce7dd;      /* soft coral tint */
-  --color-cream: #faf5ec;      /* page background */
+  --color-ink: #2b3a48;        /* cool dark blue-gray — headings & body text */
+  --color-ink-soft: #6a7887;   /* cool gray — secondary text */
+  --color-navy: #0b5ea3;       /* the logo blue (a touch brighter, friendly) */
+  --color-navy-dark: #084b83;  /* deeper blue — hover / footer */
+  --color-red: #e94f5b;        /* coral-red accent (logo red family) */
+  --color-red-dark: #d83f4b;   /* accent hover */
+  --color-mist: #eef4fa;       /* light blue section background */
+  --color-cloud: #e0ebf5;      /* light blue card / hover background */
+  --color-line: #d5e3f0;       /* cool hairline borders */
+  --color-blush: #e7f0f9;      /* soft blue tint */
+  --color-cream: #f7fafd;      /* airy blue-white page background */
 
   /* Friendly, rounded typography. Latin from Nunito, Japanese from
      M PLUS Rounded 1c (both rounded & warm). Chinese uses a consistent

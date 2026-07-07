@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import { StepIcon } from '../components/StepIcons.jsx'
@@ -71,22 +72,28 @@ export default function Home() {
 
       {/* ---------------- Value chain — illustrated process ---------------- */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-2">
           {valueChain.map((v, i) => (
-            <div
-              key={v.en}
-              className="flex flex-col items-center px-5 text-center lg:border-r lg:border-line lg:last:border-r-0"
-            >
-              <span className="mb-4 self-start text-sm font-semibold tracking-wider text-ink-soft">
-                0{i + 1}
-              </span>
-              <StepIcon name={v.en} className="h-14 w-14 text-ink" />
-              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-red-dark">
-                {v.en}
-              </p>
-              <h3 className="mt-1 text-lg font-bold text-ink">{v.cn || v.title}</h3>
-              {v.cn && <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.title}</p>}
-            </div>
+            <Fragment key={v.en}>
+              <div className="flex max-w-[220px] flex-col items-center px-3 text-center">
+                <StepIcon name={v.en} className="h-20 w-20 text-ink" />
+                <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-red-dark">
+                  {v.en}
+                </p>
+                <h3 className="mt-1 text-lg font-bold text-ink">{v.cn || v.title}</h3>
+                {v.cn && <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.title}</p>}
+              </div>
+              {i < valueChain.length - 1 && (
+                <svg
+                  className="hidden shrink-0 text-ink-soft/45 lg:mt-10 lg:block"
+                  width="30" height="16" viewBox="0 0 30 16" fill="none"
+                  stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"
+                  strokeLinejoin="round" aria-hidden="true"
+                >
+                  <path d="M1 8h27M23 3l5 5-5 5" />
+                </svg>
+              )}
+            </Fragment>
           ))}
         </div>
         <div className="mt-14 text-center">
