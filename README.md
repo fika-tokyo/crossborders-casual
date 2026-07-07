@@ -1,11 +1,14 @@
-# CROSSBORDERS コーポレートサイト
+# CROSSBORDERS コーポレートサイト（warm / 亲切版）
 
-> 境界を越え、価値を創る — Cross the Borders, Create the Value.
+> 境界を越え、価値を創る — Cross Borders, Create Value.
 
-CROSSBORDERS（FIKA グループ）の公式コーポレートサイトです。
+CROSSBORDERS（FIKA グループ）公式サイトの **「暖色・親しみやすい」テーマ版**です。
+内容は本家と同一で、配色（クリーム基調）と丸みのある書体（Nunito + M PLUS Rounded 1c）だけを変えています。
 技術スタック: **React + Vite + Tailwind CSS v4 + React Router**。
 
-**公開サイト:** https://fika-tokyo.github.io/crossborders/
+**公開サイト（この暖色版）:** https://fika-tokyo.github.io/crossborders-casual/
+
+**本家（従来のコーポレート版）:** https://fika-tokyo.github.io/crossborders/
 
 ---
 
