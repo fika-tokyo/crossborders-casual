@@ -1,10 +1,10 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
-import heroBg from '../assets/hero-tokyo.jpg'
-import imgAbout from '../assets/cross-partner.jpg'
-import imgValue from '../assets/cross-value.jpg'
-import imgPartner from '../assets/cross-borders.jpg'
+import heroBg from '../assets/hero-warm.jpg'
+import imgAbout from '../assets/card-about.jpg'
+import imgValue from '../assets/card-value.jpg'
+import imgPartner from '../assets/card-partner.jpg'
 
 export default function Home() {
   const { t } = useLang()
@@ -27,9 +27,9 @@ export default function Home() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* Light overlay — heavier on the right (where the text sits) so the
-            Tokyo Tower on the left stays clearly visible. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/15 via-navy/30 to-navy/65" />
+        {/* Warm overlay — heavier on the right (where the text sits) so the
+            warm interior on the left stays visible without cooling the photo. */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/10 via-ink/25 to-ink/60" />
 
         <div className="relative mx-auto flex max-w-6xl px-6 py-28 md:py-40">
           <div className="hero-block max-w-2xl md:ml-auto md:text-right">

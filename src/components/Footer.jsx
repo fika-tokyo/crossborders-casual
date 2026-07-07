@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
-import footerBg from '../assets/cta-ocean.jpg'
+import footerBg from '../assets/footer-warm.jpg'
 
 export default function Footer() {
   const { t } = useLang()
@@ -11,14 +11,14 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden text-white">
-      {/* Single ocean background for the whole bottom block. */}
+      {/* Single warm cafe background for the whole bottom block. */}
       <img
         src={footerBg}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/82 to-ink/90" />
 
       <div className="relative">
         {/* CTA banner (hidden on the contact / thank-you pages) */}
