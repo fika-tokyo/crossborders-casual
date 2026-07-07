@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — CROSSBORDERS "warm / approachable" theme.
+   Same brand hues, softened: cream backgrounds, gentler blue, warmer coral,
+   warm charcoal text — for a friendlier, more human feel.
+--------------------------------------------------------------------------- */
+@theme {
+  --color-ink: #4a423d;        /* warm charcoal — headings & body text */
+  --color-ink-soft: #8a817a;   /* warm gray — secondary text */
+  --color-navy: #4c6b8f;       /* softened brand blue */
+  --color-navy-dark: #3d5878;  /* deeper blue — hover / footer */
+  --color-red: #ef6f63;        /* warm coral accent */
+  --color-red-dark: #e2594d;   /* accent hover */
+  --color-mist: #f4ede1;       /* warm beige section background */
+  --color-cloud: #efe5d5;      /* warm card / hover background */
+  --color-line: #e8ddcb;       /* warm hairline borders */
+  --color-blush: #fce7dd;      /* soft coral tint */
+  --color-cream: #faf5ec;      /* page background */
+
+  /* Friendly, rounded typography. Latin from Nunito, Japanese from
+     M PLUS Rounded 1c (both rounded & warm). Chinese uses a consistent
+     system stack via the html:lang(zh) override below. */
+  --font-sans: "Nunito", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Chinese UI: one consistent Chinese face (rounded Chinese web fonts are too
+   heavy to ship), Latin still from the rounded Nunito. */
+html:lang(zh) body {
+  font-family: "Nunito", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB",
+    "Microsoft JhengHei", sans-serif;
+}
+
+/* Warmer, rounder surfaces: soften cards, images and shadows site-wide. */
+.rounded-xl { border-radius: 1rem; }
+.rounded-2xl { border-radius: 1.5rem; }
+
+/* Chinese-only: widen a couple of blocks so the (shorter) Chinese copy fits on
+   one line. Scoped to :lang(zh) so Japanese / English layout is untouched. */
+html:lang(zh) .cta-sub { max-width: 42rem; }
+html:lang(zh) .journey-closing { max-width: 54rem; }
+
+/* English-only: widen the hero block a touch so the subtitle sentence fits one
+   line, and cap the positioning statement so both sentences fit one line each. */
+html:lang(en) .hero-block { max-width: 46rem; }
+html:lang(en) .positioning { font-size: 1.375rem; line-height: 1.55; }
+/* Keep the (longer) English Value-page title on a single line. */
+@media (min-width: 768px) { html:lang(en) .value-title { font-size: 2.5rem; } }
+
+/* Subtle entrance animation utility */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.16s; }
+.delay-3 { animation-delay: 0.24s; }
