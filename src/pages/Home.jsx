@@ -1,6 +1,6 @@
-import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
+import { StepIcon } from '../components/StepIcons.jsx'
 import heroBg from '../assets/hero-warm.jpg'
 import imgAbout from '../assets/card-about.jpg'
 import imgValue from '../assets/card-value.jpg'
@@ -69,27 +69,31 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ---------------- Value chain — enlarged, above the cards ---------------- */}
-      <section className="mx-auto max-w-5xl px-6 pb-16 text-center md:pb-20">
-        <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-5">
+      {/* ---------------- Value chain — illustrated process ---------------- */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
           {valueChain.map((v, i) => (
-            <Fragment key={v.en}>
-              <div className="px-2">
-                <span className="text-sm font-semibold tracking-widest text-red-dark">{v.en}</span>
-                <p className="mt-1 text-xl font-bold text-ink md:text-2xl">{v.cn || v.en}</p>
-              </div>
-              {i < valueChain.length - 1 && (
-                <span className="self-center text-2xl font-bold text-red md:text-3xl">
-                  <span className="md:hidden">↓</span>
-                  <span className="hidden md:inline">→</span>
-                </span>
-              )}
-            </Fragment>
+            <div
+              key={v.en}
+              className="flex flex-col items-center px-5 text-center lg:border-r lg:border-line lg:last:border-r-0"
+            >
+              <span className="mb-4 self-start text-sm font-semibold tracking-wider text-ink-soft">
+                0{i + 1}
+              </span>
+              <StepIcon name={v.en} className="h-14 w-14 text-ink" />
+              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-red-dark">
+                {v.en}
+              </p>
+              <h3 className="mt-1 text-lg font-bold text-ink">{v.cn || v.title}</h3>
+              {v.cn && <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.title}</p>}
+            </div>
           ))}
         </div>
-        <Link to="/value" className="mt-10 inline-block text-base font-semibold text-red-dark hover:underline">
-          {ui.valueTeaserLink}
-        </Link>
+        <div className="mt-14 text-center">
+          <Link to="/value" className="inline-block text-base font-semibold text-red-dark hover:underline">
+            {ui.valueTeaserLink}
+          </Link>
+        </div>
       </section>
 
       {/* ---------------- Three portal cards ---------------- */}
